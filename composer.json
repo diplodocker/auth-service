@@ -27,7 +27,7 @@
     },
     "scripts": {
         "security-check": "curl https://get.sensiolabs.org/security-checker.phar --output security-checker.phar && php security-checker.phar security:check ./composer.lock",
-        "style-check": "vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp src assets",
-        "style-fix": "vendor/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp src assets"
+        "style-check": "vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp src",
+        "style-fix": "vendor/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp src"
     }
 }

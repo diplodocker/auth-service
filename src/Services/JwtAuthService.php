@@ -44,8 +44,9 @@ class JwtAuthService implements AuthServiceInterface
     public function login(LoginRequest $request): array
     {
         $credentials = $request->getCredentials();
+        $token = $this->guard->attempt($credentials);
 
-        if ($token = $this->guard->attempt($credentials)) {
+        if ($token) {
             return $this->createTokenResponse($token);
         }
 
@@ -89,8 +90,9 @@ class JwtAuthService implements AuthServiceInterface
         $user = tap($userAsset)->save();
 
         throw_unless((bool) $user, RegistrationException::class);
+        $token = $this->guard->login($user);
 
-        if ($token = $this->guard->login($user)) {
+        if ($token) {
             return $this->createTokenResponse($token);
         }
 
