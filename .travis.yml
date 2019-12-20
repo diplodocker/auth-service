@@ -25,9 +25,10 @@ before_script:
   - composer self-update
 
 script:
-  - make phpcs
   - make environment
   - make install
+  - make phpcs
+  - composer style-check
   - make test
 
 after_failure:
