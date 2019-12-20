@@ -1,7 +1,3 @@
-phpcs:
-	@curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
-	@php phpcs.phar src/
-
 database:
 	@sudo mysql -e "update mysql.user set authentication_string=PASSWORD('${PASSWD}') where User='${ROOT}';"
 	@sudo mysql -e "update mysql.user set plugin='mysql_native_password';FLUSH PRIVILEGES;"

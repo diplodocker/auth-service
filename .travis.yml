@@ -8,11 +8,6 @@ language: php
 php:
   - '7.3'
   - '7.4'
-  - nightly
-
-matrix:
-  allow_failures:
-    - php: nightly
 
 services:
   - mysql
@@ -26,7 +21,6 @@ before_script:
 script:
   - make environment
   - composer install
-  - make phpcs
   - composer style-check
   - composer security-check
   - make install
