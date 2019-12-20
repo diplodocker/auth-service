@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Tests\Feature;
 
@@ -17,7 +18,7 @@ class HttpTest extends TestCase
 
         $response->assertSuccessful();
         $response->assertJson([
-            'auth' => false
+            'auth' => false,
         ]);
     }
 
@@ -39,7 +40,7 @@ class HttpTest extends TestCase
         // email
         $response = $this->postJson(
             route('auth-service.login', [
-                'email' => 'test@test.com'
+                'email' => 'test@test.com',
             ])
         );
         $response->assertJsonValidationErrors([
@@ -52,7 +53,7 @@ class HttpTest extends TestCase
         // password
         $response = $this->postJson(
             route('auth-service.login', [
-                'password' => 'test@test.com'
+                'password' => 'test@test.com',
             ])
         );
         $response->assertJsonValidationErrors([
@@ -81,7 +82,7 @@ class HttpTest extends TestCase
         // email
         $response = $this->postJson(
             route('auth-service.login', [
-                'email' => 'test@test.com'
+                'email' => 'test@test.com',
             ])
         );
         $response->assertJsonValidationErrors([
@@ -94,7 +95,7 @@ class HttpTest extends TestCase
         // password
         $response = $this->postJson(
             route('auth-service.login', [
-                'password' => 'test@test.com'
+                'password' => 'test@test.com',
             ])
         );
         $response->assertJsonValidationErrors([
@@ -135,7 +136,7 @@ class HttpTest extends TestCase
         $response = $this->postJson(
             route('auth-service.register', [
                 'email' => $email,
-                'password' => $password
+                'password' => $password,
             ])
         );
         $response->assertSuccessful();
@@ -158,7 +159,7 @@ class HttpTest extends TestCase
         );
         $response->assertSuccessful();
         $response->assertJson([
-            'auth' => true
+            'auth' => true,
         ]);
 
         $this->assertDatabaseHas('users', [
@@ -172,7 +173,7 @@ class HttpTest extends TestCase
         );
         $response->assertSuccessful();
         $response->assertJson([
-            'success' => true
+            'success' => true,
         ]);
     }
 }
