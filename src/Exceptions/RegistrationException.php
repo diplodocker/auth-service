@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Diplodocker\Exceptions;
 
@@ -12,5 +12,4 @@ use Exception;
  */
 class RegistrationException extends Exception
 {
-    //
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace App;
 
@@ -49,7 +50,7 @@ class User extends Authenticatable implements AuthorizationInterface
     public function getFactoryDefaults(): array
     {
         return [
-            'name' => 'user'
+            'name' => 'user',
         ];
     }
 }

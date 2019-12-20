@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 /**
  * JWT Authorization routes
@@ -7,7 +8,7 @@
 Route::name('auth-service.')
     ->prefix('auth')
     ->middleware('api')
-    ->namespace('Diplodocker\Http\Controllers\Auth')->group(function () {
+    ->namespace('Diplodocker\Http\Controllers\Auth')->group(static function () {
         Route::name('check')->get('check', 'CheckController@handle');
         Route::name('login')->post('login', 'LoginController@handle');
         Route::name('logout')->get('logout', 'LogoutController@handle');

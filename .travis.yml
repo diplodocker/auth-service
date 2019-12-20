@@ -1,14 +1,13 @@
 ---
-dist: xenial
+dist: bionic
 
 git:
   quiet: true
 
 language: php
 php:
-  - '7.1'
-  - '7.2'
   - '7.3'
+  - '7.4'
   - nightly
 
 matrix:
@@ -25,9 +24,11 @@ before_script:
   - composer self-update
 
 script:
-  - make phpcs
   - make environment
   - make install
+  - make phpcs
+  - composer style-check
+  - composer security-check
   - make test
 
 after_failure:
