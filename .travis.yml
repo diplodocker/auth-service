@@ -29,6 +29,7 @@ script:
   - make install
   - make phpcs
   - composer style-check
+  - composer security-check
   - make test
 
 after_failure:
