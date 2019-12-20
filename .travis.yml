@@ -25,10 +25,11 @@ before_script:
 
 script:
   - make environment
-  - make install
+  - composer install
   - make phpcs
   - composer style-check
   - composer security-check
+  - make install
   - make test
 
 after_failure:
