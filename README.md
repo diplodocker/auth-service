@@ -1,4 +1,5 @@
 ### About
+![Header](https://i.imgur.com/HYrgHuk.png)
 
 [![Build Status](https://travis-ci.org/diplodocker/auth-service.svg?branch=master)](https://travis-ci.org/diplodocker/auth-service)
 [![GitHub issues](https://img.shields.io/github/issues/diplodocker/auth-service.svg)](https://github.com/diplodocker/auth-service/issues)
