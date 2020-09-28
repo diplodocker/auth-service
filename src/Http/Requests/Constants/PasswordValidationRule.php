@@ -20,5 +20,5 @@ interface PasswordValidationRule
      * Max password length
      * @var int
      */
-    public const MAX_LENGTH = 10;
+    public const MAX_LENGTH = 45;
 }
